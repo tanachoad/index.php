@@ -24,22 +24,26 @@
             </thead>
         </table>
         <tbody id="tblPosts">
-            sssssss
+
         </tbody>
+        <div id="detail">
+            ssssss
+        </div>
 </body>
+
 <script>
-function showDetails(id){
+    function showDetails(id) {
         $("#main").hide();
         $("#detail").show();
-        var url = "https://jsonplaceholder.typicode.com/posts/"+id;
+        var url = "https://jsonplaceholder.typicode.com/posts/" + id;
         $.getJSON(url)
-            .done((data)=>{
+            .done((data) => {
                 console.log(data);
             })
-            .fail((xhr, status, error)=>{
+            .fail((xhr, status, error) => {
             })
     }
-    function loadPosts() {        
+    function loadPosts() {
         $.getJSON(url)
             .done((data) => {
                 $.each(data, (k, item) => {
