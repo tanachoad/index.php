@@ -55,7 +55,7 @@
                     var line = "<tr>";
                     line += "<td>" + item.id + "</td>";
                     line += "<td><b>" + item.title + "</b><br/>";
-                    line += itme.body + "/td";
+                    line += itme.body + "</td>";
                     line += "<td> <button on Click='shoDetails(" + item.id + ");'>link </button> </td>";
                     line += "</tr>";
                     $("#tblPosts").append(line);
