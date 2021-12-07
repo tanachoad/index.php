@@ -10,17 +10,43 @@
 
 </head>
 <body>
-    var url = "https://cj-android-demon.herokuapp.com/json1.php"
-    $.get(url,(data,status)=>{
-        console.log(data);
-        var jData = JSON.parse(data);
-        consolle.log(jDatafname);
-        consolle.log(jDatalname);
-    });
-<script>
-    $(()=>{
-        $("#btnJSON1").click(loadJSON);
-    })
-</script>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+        </thead>
+        <tbody id="tblStudent">
+        </tbody>
+    </table>
 </body>
+<script>
+
+    function loadJSON() {
+        var url = "https://cj-android-demon.herokuapp.com/json2.php";
+        $.getJSON(url)
+            .done((data) => {
+                console.log(data);
+                $.each(data, (k, item) => {
+                    console.log(k);
+                    console.log(item);
+                    var line = "<tr>";
+                    line += "<td>" + (k + 1) + "</td>";
+                    line += "<td>" + item.fname + "</td>";
+                    line += "<td>" + item.lname + "</td>";
+                    line += "</tr>";
+                    $("#tblStudent").append(line);
+                });
+            })
+            .fail((xhr, status, err) => {
+            });
+    }
+    $(() => {
+        loadJSON();
+    });
+</script>
+
 </html>
