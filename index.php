@@ -26,6 +26,7 @@
         <tbody id="tblPosts">
 
         </tbody>
+    </div>
         <div id="detail">
             ssssss
         </div>
