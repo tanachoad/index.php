@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,44 +10,47 @@
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
 </head>
-<body>
 
+<body>
     <table>
         <thead>
             <tr>
                 <th>ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
+                <th>Title</th>
+                <th>Author</th>
             </tr>
         </thead>
-        <tbody id="tblStudent">
-        </tbody>
     </table>
+    <tbody id="tblPosts">
+        sssssss
+    </tbody>
 </body>
 <script>
-
-    function loadJSON() {
-        var url = "https://cj-android-demon.herokuapp.com/json2.php";
+    function loadPosts() {
+        var url = "https://jsonplaceholder.typicode.com/posts.com";
         $.getJSON(url)
             .done((data) => {
-                console.log(data);
                 $.each(data, (k, item) => {
-                    console.log(k);
                     console.log(item);
                     var line = "<tr>";
-                    line += "<td>" + (k + 1) + "</td>";
-                    line += "<td>" + item.fname + "</td>";
-                    line += "<td>" + item.lname + "</td>";
+                    line += "<td>" + item.id + "</td>";
+                    line += "<td><b>" + item.title + "</b><br/>";
+                    line += itme.body + "/td";
+                    line += "<td> <button on Click='shoDetails(" + item.id + ");'>link </button> </td>";
                     line += "</tr>";
-                    $("#tblStudent").append(line);
+                    $("#tblPosts").append(line);
                 });
+                $("#main").show();
             })
-            .fail((xhr, status, err) => {
-            });
+            .fail((xhr, status, error) => {
+            })
     }
     $(() => {
-        loadJSON();
-    });
+        loadPosts();
+        $("#btnBack").click(() => {
+            $("#main").show();
+        });
+    })
 </script>
 
 </html>
