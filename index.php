@@ -28,8 +28,18 @@
         </tbody>
 </body>
 <script>
-    function loadPosts() {
-        var url = "https://jsonplaceholder.typicode.com/posts.com";
+function showDetails(id){
+        $("#main").hide();
+        $("#detail").show();
+        var url = "https://jsonplaceholder.typicode.com/posts/"+id;
+        $.getJSON(url)
+            .done((data)=>{
+                console.log(data);
+            })
+            .fail((xhr, status, error)=>{
+            })
+    }
+    function loadPosts() {        
         $.getJSON(url)
             .done((data) => {
                 $.each(data, (k, item) => {
