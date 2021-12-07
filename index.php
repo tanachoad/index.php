@@ -12,18 +12,20 @@
 </head>
 
 <body>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Author</th>
-            </tr>
-        </thead>
-    </table>
-    <tbody id="tblPosts">
-        sssssss
-    </tbody>
+    <button id="btnBack"> back </button>
+    <div id="main">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                </tr>
+            </thead>
+        </table>
+        <tbody id="tblPosts">
+            sssssss
+        </tbody>
 </body>
 <script>
     function loadPosts() {
