@@ -99,6 +99,7 @@
         loadPosts();
         $("#btnBack").click(() => {
             $("#main").show();
+            $("#detail").hide();
             $("#details").remove();
             
         });
