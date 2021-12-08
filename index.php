@@ -18,6 +18,9 @@
     .athir{
         color: darkblue;
     }
+    td{
+        co;or: DodgerBlue;
+        }
     </style>
 </head>
 
@@ -64,7 +67,7 @@
                     console.log(item);
                     var line = "<tr>";
                     line += "<td>" + item.id + "</td>";
-                    line += "<td><b style="color:DodgerBlue;">" + item.title + "</b><br/>";
+                    line += "<td><b>" + item.title + "</b><br/>";
                     line += item.body + "</td>";
                     line += "<td> <button onClick='showDetails(" + item.id + ");' > link </button> </td>";
                     line += "</tr>";
