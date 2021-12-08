@@ -37,7 +37,7 @@
         </table>
     </div>
     <div id="detail">
-         var url = "https://jsonplaceholder.typicode.com/posts/"  id  + 1;
+        
     </div>
 
 </body>
@@ -79,7 +79,7 @@
         loadPosts();
         $("#btnBack").click(() => {
             $("#main").show();
-            var url = "https://jsonplaceholder.typicode.com/posts/"  id  + 1;
+            
         });
     })
 </script>
