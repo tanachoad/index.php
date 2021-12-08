@@ -26,8 +26,10 @@
     <div id="main">
         <table>
             <thead>
-                <tr><ins>
-                    <th class="id">ID</th></ins>
+                <tr>
+                    <ins>
+                        <th class="id">ID</th>
+                    </ins>
                     <th class="itle">Title</th>
                     <th class="athir"> Details </th>
                 </tr>
