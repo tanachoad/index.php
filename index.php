@@ -8,6 +8,17 @@
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Json</title>
+    <style>
+       .id{
+           color: darkblue;
+        }
+        .itle{
+           color: darkred;
+        }
+        .thor{
+           color: deepskyblue;
+        }
+    </style>
 </head>
 <body>
     <button id="btnBack"> back </button>
@@ -15,9 +26,9 @@
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Author</th>
+                    <th class = "id"><ins>ID</ins></th>
+                    <th class = "itle"><ins>Title</ins></th>
+                    <th class = "thor"><ins>Author</ins></th>
                 </tr>
             </thead>
             <tbody id="tblPost">
@@ -28,9 +39,9 @@
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>UserID</th>
+                    <th class = "id"><ins>ID</ins></th>
+                    <th class = "itle"><ins>Title</ins></th>
+                    <th class = "thor"><ins>Author</ins></th>
                 </tr>
             </thead>
             <tbody id="tbldetails">
@@ -60,9 +71,6 @@
             .fail((xhr, err, status) => {
             })
     }
-    
-    
-    
     function showDetails(id) {
         $("#main").hide();
         $("#detail").show();
@@ -77,15 +85,10 @@
                     line += "<td>" + data.userId + "</td>"
                     line += "</tr>";
                     $("#tbldetails").append(line);
-             
             })
             .fail((xhr, err, status) => {
             })
     }
-    
-
-
-
     $(() => {
         LoadPosts();
         $("#detail").hide();
@@ -96,6 +99,5 @@
             $("#details").remove();
         });
     })
-  
 </script>
 </html>
