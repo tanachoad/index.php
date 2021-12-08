@@ -8,6 +8,17 @@
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <style>
+    .id{
+        color: blue;
+    }
+    .itle{
+        color: crimson;
+    }
+    .athir{
+        color: darkblue;
+    }
+    </style>
 </head>
 
 <body>
@@ -16,9 +27,9 @@
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th> Details </th>
+                    <th class="id">ID</th>
+                    <th class="itle">Title</th>
+                    <th class="athir"> Details </th>
                 </tr>
             </thead>
             <tbody id="tblPosts">
@@ -26,7 +37,7 @@
         </table>
     </div>
     <div id="detail">
-        sssssss
+        tanachoad
     </div>
 
 </body>
