@@ -37,7 +37,17 @@
         </table>
     </div>
     <div id="detail">
-        
+        <table>
+            <thead>
+                <tr>
+                    <th class="id"><ins>ID</ins></th>
+                    <th class="itle"><ins>Title</ins></th>
+                    <th class="athir"><ins>Details</ins></th>
+                </tr>
+            </thead>
+            <tbody id="tblPosts">
+            </tbody>
+        </table>
     </div>
 
 </body>
@@ -71,7 +81,6 @@
                     $("#tblPosts").append(line);
                 });
                 $("#main").show();
-            var url = "https://jsonplaceholder.typicode.com/posts";
             })
             .fail((xhr, status, error) => {
             })
@@ -80,6 +89,7 @@
         loadPosts();
         $("#btnBack").click(() => {
             $("#main").show();
+            $("#details").remove();
             
         });
     })
