@@ -81,6 +81,7 @@
         loadPosts();
         $("#btnBack").click(() => {
             $("#main").show();
+            var url = "https://jsonplaceholder.typicode.com/posts/" + id;
         });
     })
 </script>
