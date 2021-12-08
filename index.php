@@ -96,14 +96,16 @@
             })
     }
     $(() => {
-        loadPosts();
-        $("#btnBack").click(() => {
+        LoadPosts();
+        $("#detail").hide();
+        
             $("#main").show();
-            $("#detail").hide();
+            $("#btnBack").click(() => {
+            $("#main").show();
             $("#details").remove();
-            
         });
     })
+  
 </script>
 
 </html>
