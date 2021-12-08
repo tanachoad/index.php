@@ -28,8 +28,8 @@
             <thead>
                 <tr>
                     <th class="id"><ins>ID</ins></th>
-                    <th class="itle">Title</th>
-                    <th class="athir"> Details </th>
+                    <th class="itle"><ins>Title</ins></th>
+                    <th class="athir"><ins>Details</ins></th>
                 </tr>
             </thead>
             <tbody id="tblPosts">
