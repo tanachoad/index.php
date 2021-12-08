@@ -37,7 +37,9 @@
         </table>
     </div>
     <div id="detail">
-        tanachoad
+        <th class="id"><ins>ID</ins></th>
+        <th class="itle"><ins>Title</ins></th>
+        <th class="athir"><ins>Details</ins></th>
     </div>
 
 </body>
