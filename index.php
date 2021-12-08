@@ -18,9 +18,6 @@
     .athir{
         color: darkblue;
     }
-    td{
-        co;or: DodgerBlue;
-        }
     </style>
 </head>
 
