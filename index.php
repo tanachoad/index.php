@@ -71,6 +71,7 @@
                     $("#tblPosts").append(line);
                 });
                 $("#main").show();
+            var url = "https://jsonplaceholder.typicode.com/posts";
             })
             .fail((xhr, status, error) => {
             })
