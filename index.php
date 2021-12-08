@@ -37,9 +37,7 @@
         </table>
     </div>
     <div id="detail">
-        <th class="id"><ins>ID</ins></th>
-        <th class="itle"><ins>Title</ins></th>
-        <th class="athir"><ins>Details</ins></th>
+        
     </div>
 
 </body>
@@ -82,6 +80,23 @@
         $("#btnBack").click(() => {
             $("#main").show();
             var url = "https://jsonplaceholder.typicode.com/posts/" + id;
+            $.getJSON(url)
+            .done((data) => {
+                $.each(data, (k, item) => {
+                    console.log(item);
+                    var line = "<tr>";
+                    line += "<td>" + item.id + "</td>";
+                    line += "<td><b>" + item.title + "</b><br/>";
+                    line += item.body + "</td>";
+                    line += "<td> <button onClick='showDetails(" + item.id + ");' > link </button> </td>";
+                    line += "</tr>";
+                    $("#tblPosts").append(line);
+                });
+                $("#main").show();
+            })
+            .fail((xhr, status, error) => {
+            })
+    }
         });
     })
 </script>
