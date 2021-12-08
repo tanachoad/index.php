@@ -4,35 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <style>
-    .id{
-        color: blue;
-    }
-    .itle{
-        color: crimson;
-    }
-    .athir{
-        color: darkblue;
-    }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json</title>
 </head>
-
 <body>
-    <button id="btnBack" style="background-color:DodgerBlue;"> back </button>
+    <button id="btnBack"> back </button>
     <div id="main">
         <table>
             <thead>
                 <tr>
-                    <th class="id"><ins>ID</ins></th>
-                    <th class="itle"><ins>Title</ins></th>
-                    <th class="athir"><ins>Details</ins></th>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Author</th>
                 </tr>
             </thead>
-            <tbody id="tblPosts">
+            <tbody id="tblPost">
             </tbody>
         </table>
     </div>
@@ -40,22 +28,45 @@
         <table>
             <thead>
                 <tr>
-                    <th class="id"><ins>ID</ins></th>
-                    <th class="itle"><ins>Title</ins></th>
-                    <th class="athir"><ins>Details</ins></th>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>UserID</th>
                 </tr>
             </thead>
-            <tbody id="tblPosts">
+            <tbody id="tbldetails">
             </tbody>
         </table>
     </div>
-
 </body>
 <script>
+    function LoadPosts() {
+        $("#main").show();
+        $("#detail").hide();
+        var url = "https://jsonplaceholder.typicode.com/posts"
+        $.getJSON(url)
+            .done((data) => {
+                $.each(data, (k, item) => {
+                    
+                    var line = "<tr>";
+                    line += "<td>" + item.id + "</td>"
+                    line += "<td><b>" + item.title + "</b><br/>"
+                    line += item.body + "</td>"
+                    line += "<td><button onClick='showDetails(" + item.id + ");'>Link</button></td>"
+                    line += "</tr>";
+                    $("#tblPost").append(line);
+                });
+                $("#main").show();
+            })
+            .fail((xhr, err, status) => {
+            })
+    }
+    
+    
+    
     function showDetails(id) {
         $("#main").hide();
         $("#detail").show();
-        var url = "https://jsonplaceholder.typicode.com/posts/" + id;
+        var url = "https://jsonplaceholder.typicode.com/posts/" + id 
         $.getJSON(url)
             .done((data) => {
                 console.log(data);
@@ -66,42 +77,25 @@
                     line += "<td>" + data.userId + "</td>"
                     line += "</tr>";
                     $("#tbldetails").append(line);
+             
             })
-            .fail((xhr, status, error) => {
+            .fail((xhr, err, status) => {
             })
     }
-    function loadPosts() {
-        $("#main").show();
-        $("#details").hide();
+    
 
-        var url = "https://jsonplaceholder.typicode.com/posts";
-        $.getJSON(url)
-            .done((data) => {
-                $.each(data, (k, item) => {
-                    console.log(item);
-                    var line = "<tr>";
-                    line += "<td>" + item.id + "</td>";
-                    line += "<td><b>" + item.title + "</b><br/>";
-                    line += item.body + "</td>";
-                    line += "<td> <button onClick='showDetails(" + item.id + ");' > link </button> </td>";
-                    line += "</tr>";
-                    $("#tblPosts").append(line);
-                });
-                $("#main").show();
-            })
-            .fail((xhr, status, error) => {
-            })
-    }
+
+
     $(() => {
-        loadPosts();
-        $("#btnBack").click(() => {
+        LoadPosts();
+        $("#detail").hide();
+        
             $("#main").show();
-            $("#detail").hide();
+            $("#btnBack").click(() => {
+            $("#main").show();
             $("#details").remove();
         });
     })
-    })
   
 </script>
-
 </html>
