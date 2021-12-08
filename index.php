@@ -81,7 +81,8 @@
                 var line = "<tr id='details'";
                     line += "><td>" + data.id + "</td>"
                     line += "<td><b>" + data.title + "</b><br/>"
-                    line += data.comment +"</td>"
+                    line += data.body + "<br/>"
+                    line += data.show"</td>"
                     line += "<td>" + data.userId + "</td>"
                     line += "</tr>";
                     $("#tbldetails").append(line);
