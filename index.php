@@ -53,6 +53,7 @@
     function LoadPosts() {
         $("#main").show();
         $("#detail").hide();
+        $("main2").hide();
         var url = "https://jsonplaceholder.typicode.com/posts"
         $.getJSON(url)
             .done((data) => {
@@ -63,6 +64,7 @@
                     line += "<td><b>" + item.title + "</b><br/>"
                     line += item.body + "</td>"
                     line += "<td><button onClick='showDetails(" + item.id + ");'>Link</button></td>"
+        
                     line += "</tr>";
                     $("#tblPost").append(line);
                 });
@@ -71,10 +73,14 @@
             .fail((xhr, err, status) => {
             })
     }
+    
+    
+    
     function showDetails(id) {
         $("#main").hide();
         $("#detail").show();
-        var url = "https://jsonplaceholder.typicode.com/posts/" + id 
+        $("main2").hide();
+        var url = "https://jsonplaceholder.typicode.com/posts/" + id
         $.getJSON(url)
             .done((data) => {
                 console.log(data);
@@ -85,10 +91,62 @@
                     line += "<td>" + data.userId + "</td>"
                     line += "</tr>";
                     $("#tbldetails").append(line);
+             
             })
             .fail((xhr, err, status) => {
             })
     }
+
+    function LoadPosts2() {
+        $("#main").hide();
+        $("#comments").hide();
+        $("main2").show();
+        var url = "https://jsonplaceholder.typicode.com/comments"
+        $.getJSON(url)
+            .done((data) => {
+              $.each(data, (k, item) => {
+                    var line = "<tr>";
+                    line += "<td>" + item.postId + "</td>"
+                    line += "<td><b>" + item.id + "</b><br/>"
+                    line += "<td><b>" + item.name+ "</b><br/>"
+                    line += "<td><b>" + item.email + "</b><br/>"
+                    line +=  item.body+ "</td>"
+                
+
+                    line += "</tr>";
+                    $("#tblPost2").append(line);
+                });
+                $("#main").show();
+            })
+            .fail((xhr, err, status) => {
+            })
+    }
+
+    function showcomments(id) {
+        $("#main").hide();
+        $("#commsnts").show();
+        var url = "https://jsonplaceholder.typicode.com/posts/"+id+"/comments"
+        $.getJSON(url)
+            .done((data) => {
+                console.log(data);
+                var line = "<tr id='comments'";
+                 
+                    line += "<td><b>" + data.id + "</b><br/>"
+                    line += "<td><b>" + data.name + "</b><br/>"
+                    line += "<td><b>" + data.email + "</b><br/>"
+                    line += "<td><b>" + data.body + "</b><br/>"
+                    /*line += data.body + "</td>"*/
+                    line += "<td>" + data.postId + "</td>"
+                    line += "</tr>";
+                    $("#tblcomments").append(line);
+             
+            })
+            .fail((xhr, err, status) => {
+            })
+
+          }
+
+    
     $(() => {
         LoadPosts();
         $("#detail").hide();
@@ -98,6 +156,8 @@
             $("#main").show();
             $("#details").remove();
         });
+        LoadPosts2();
     })
+  
 </script>
 </html>
