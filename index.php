@@ -26,9 +26,9 @@
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Author</th>
+                    <th class="id"><ins>ID</ins></th>
+                    <th class ="itle"><ins>Title</ins></th>
+                    <th class ="thor"><ins>Author</ins></th>
                 </tr>
             </thead>
             <tbody id="tblPost">
@@ -39,9 +39,9 @@
         <table>
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>UserID</th>
+                    <th class="id"><ins>ID</ins></th>
+                    <th class ="itle"><ins>Title</ins></th>
+                    <th class ="thor"><ins>UserID</ins></th>
                 </tr>
             </thead>
             <tbody id="tbldetails">
