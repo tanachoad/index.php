@@ -26,9 +26,9 @@
         <table>
             <thead>
                 <tr>
-                    <th class = "id"><ins>ID</ins></th>
-                    <th class = "itle"><ins>Title</ins></th>
-                    <th class = "thor"><ins>Author</ins></th>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Author</th>
                 </tr>
             </thead>
             <tbody id="tblPost">
@@ -39,12 +39,43 @@
         <table>
             <thead>
                 <tr>
-                    <th class = "id"><ins>ID</ins></th>
-                    <th class = "itle"><ins>Title</ins></th>
-                    <th class = "thor"><ins>Author</ins></th>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>UserID</th>
                 </tr>
             </thead>
             <tbody id="tbldetails">
+            </tbody>
+        </table>
+    </div>
+    <div id="main2">
+        <table>
+            <thead>
+                <th>postID</th><br/>
+
+                <th>id</th>
+                <th>name</th>
+                <th>email</th>
+                <th>body</th>
+
+            </thead>
+            <tbody id="tblPost2">
+            </tbody>
+        </table>
+    </div>
+    <div id="comments">
+        <table>
+            <thead>
+                 <tr>
+                  <th>postId</th>
+  
+                  <th>id</th>
+                  <th>name</th>
+                  <th>email</th>
+                  <th>body</th>
+                </tr>
+            </thead>
+            <tbody id="tblcommets">
             </tbody>
         </table>
     </div>
